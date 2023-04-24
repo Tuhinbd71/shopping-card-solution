@@ -1,3 +1,4 @@
+// iPhone update section
 function producQty(isIncreasing) {
     const productIncrease = document.getElementById("product-qty");
     const producQty = productIncrease.value;
@@ -9,12 +10,10 @@ function producQty(isIncreasing) {
         productIncrease.value = parseInt(producQty) - 1
     }
 }
-
-
-
 document.getElementById("plus-btn").addEventListener("click", function () {
     producQty(true);
 })
 document.getElementById("minus-btn").addEventListener("click", function () {
     producQty(false);
 })
+// Case update section
