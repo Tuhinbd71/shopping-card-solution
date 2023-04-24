@@ -1,8 +1,20 @@
-document.getElementById("plus-btn").addEventListener("click", function () {
-    const productIncrease = document.getElementById("product-increase");
+function producQty(isIncreasing) {
+    const productIncrease = document.getElementById("product-qty");
     const producQty = productIncrease.value;
-    productIncrease.value = parseInt(producQty) + 1;
+
+    if (isIncreasing == true) {
+        productIncrease.value = parseInt(producQty) + 1;
+    }
+    else if (producQty > 0) {
+        productIncrease.value = parseInt(producQty) - 1
+    }
+}
+
+
+
+document.getElementById("plus-btn").addEventListener("click", function () {
+    producQty(true);
 })
 document.getElementById("minus-btn").addEventListener("click", function () {
-    console.log("Minus btn clicked")
+    producQty(false);
 })
