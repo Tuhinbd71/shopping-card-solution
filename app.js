@@ -1,19 +1,24 @@
 // iPhone update section
-function producQty(isIncreasing) {
+function productQty(isIncreasing) {
     const productIncrease = document.getElementById("product-qty");
-    const producQty = productIncrease.value;
+    const productQty = productIncrease.value;
 
     if (isIncreasing == true) {
-        productIncrease.value = parseInt(producQty) + 1;
+        productIncrease.value = parseInt(productQty) + 1;
     }
-    else if (producQty > 0) {
-        productIncrease.value = parseInt(producQty) - 1
+    else if (productQty > 0) {
+        productIncrease.value = parseInt(productQty) - 1
     }
+    // iPhone price update
+    const iPhonePriceTotal = document.getElementById("price-total");
+    iPhonePriceTotal.innerText = productQty * 1219;
 }
 document.getElementById("plus-btn").addEventListener("click", function () {
-    producQty(true);
+    productQty(true);
 })
 document.getElementById("minus-btn").addEventListener("click", function () {
-    producQty(false);
+    productQty(false);
 })
+
 // Case update section
+
