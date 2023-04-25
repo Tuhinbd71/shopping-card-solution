@@ -1,4 +1,4 @@
-// iPhone update section
+// Shopping cart handles increase & decrease and update price using function
 function productQty(isIncreasing) {
     const productIncrease = document.getElementById("product-qty");
     let productQty = productIncrease.value;
@@ -10,7 +10,7 @@ function productQty(isIncreasing) {
         productQty = parseInt(productQty) - 1
     }
     productIncrease.value = productQty;
-    // iPhone price update section
+    // iPhone total price update section
     const iPhonePriceTotal = document.getElementById("price-total");
     iPhonePriceTotal.innerText = productQty * 1219;
 }
