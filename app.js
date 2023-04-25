@@ -25,14 +25,16 @@ document.getElementById("minus-btn").addEventListener("click", function () {
 function caseQty(isIncrease) {
     // case increase update
     const caseQty = document.getElementById("case-qty");
-    const caseQtyValue = caseQty.value;
+    let caseQtyValue = caseQty.value;
     if (isIncrease == true) {
-        caseQty.value = parseInt(caseQtyValue) + 1;
+        caseQtyValue = parseInt(caseQtyValue) + 1;
     }
     else if (caseQtyValue > 0) {
-        caseQty.value = parseInt(caseQtyValue) - 1;
+        caseQtyValue = parseInt(caseQtyValue) - 1;
     }
-
+    caseQty.value = caseQtyValue;
+    const caseTotal = document.getElementById("case-total");
+    caseTotal.innerText = caseQtyValue * 59;
 }
 document.getElementById("case-plusBtn").addEventListener("click", function () {
     // // case increase update
