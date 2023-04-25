@@ -1,15 +1,16 @@
 // iPhone update section
 function productQty(isIncreasing) {
     const productIncrease = document.getElementById("product-qty");
-    const productQty = productIncrease.value;
+    let productQty = productIncrease.value;
 
     if (isIncreasing == true) {
-        productIncrease.value = parseInt(productQty) + 1;
+        productQty = parseInt(productQty) + 1;
     }
     else if (productQty > 0) {
-        productIncrease.value = parseInt(productQty) - 1
+        productQty = parseInt(productQty) - 1
     }
-    // iPhone price update
+    productIncrease.value = productQty;
+    // iPhone price update section
     const iPhonePriceTotal = document.getElementById("price-total");
     iPhonePriceTotal.innerText = productQty * 1219;
 }
