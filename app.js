@@ -26,8 +26,12 @@ function calculateTotal() {
     const phoneAmountTotal = getProductValue("phone") * 1219;
     const caseAmountTotal = getProductValue("case") * 59;
     const subTotalAmount = phoneAmountTotal + caseAmountTotal;
+    const taxTotalAmount = subTotalAmount / 10;
+    const totalPriceAmount = subTotalAmount + taxTotalAmount;
     // Update on the html
     const subTotal = document.getElementById("sub-total").innerText = subTotalAmount;
+    const taxTotal = document.getElementById("tax-total").innerText = taxTotalAmount;
+    const totalPrice = document.getElementById("total-amount").innerText = totalPriceAmount;
 
 }
 
