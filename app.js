@@ -1,53 +1,34 @@
 // Shopping cart handles increase & decrease and update price using function
-function iPhoneQty(isIncreasing) {
-    const productIncrease = document.getElementById("product-qty");
+function productQuentity(product, price, isIncreasing) {
+    const productIncrease = document.getElementById(product + "-qty");
     let productQty = productIncrease.value;
-
     if (isIncreasing == true) {
         productQty = parseInt(productQty) + 1;
     }
     else if (productQty > 0) {
-        productQty = parseInt(productQty) - 1
+        productQty = parseInt(productQty) - 1;
     }
     productIncrease.value = productQty;
     // iPhone total price update section
-    const iPhonePriceTotal = document.getElementById("price-total");
-    iPhonePriceTotal.innerText = productQty * 1219;
+    const caseTotal = document.getElementById(product + "-total");
+    caseTotal.innerText = productQty * price;
+    // const iPhonePriceTotal = document.getElementById(product + "-total");
+    // iPhonePriceTotal.innerText = productQty * price;
+
 }
-document.getElementById("plus-btn").addEventListener("click", function () {
-    iPhoneQty(true);
-})
-document.getElementById("minus-btn").addEventListener("click", function () {
-    iPhoneQty(false);
-})
+// Phone increase & decrease and update price using function
+document.getElementById("phone-plusBtn").addEventListener("click", function () {
+    productQuentity("phone", 1219, true);
+});
+document.getElementById("phone-minusBtn").addEventListener("click", function () {
+    productQuentity("phone", 1219, false);
+});
 
 // Case increase & decrease and update price using function
-function caseQty(isIncrease) {
-    // case increase update
-    const caseQty = document.getElementById("case-qty");
-    let caseQtyValue = caseQty.value;
-    if (isIncrease == true) {
-        caseQtyValue = parseInt(caseQtyValue) + 1;
-    }
-    else if (caseQtyValue > 0) {
-        caseQtyValue = parseInt(caseQtyValue) - 1;
-    }
-    caseQty.value = caseQtyValue;
-    const caseTotal = document.getElementById("case-total");
-    caseTotal.innerText = caseQtyValue * 59;
-}
 document.getElementById("case-plusBtn").addEventListener("click", function () {
-    // // case increase update
-    // const caseQty = document.getElementById("case-qty");
-    // const caseQtyValue = caseQty.value;
-    // caseQty.value = parseInt(caseQtyValue) + 1;
-    caseQty(true);
-})
-// case decrease update
+    productQuentity("case", 59, true);
+});
 document.getElementById("case-minusBtn").addEventListener("click", function () {
-    // case increase update
-    // const caseQty = document.getElementById("case-qty");
-    // const caseQtyValue = caseQty.value;
-    // caseQty.value = parseInt(caseQtyValue) - 1;
-    caseQty(false);
-})
+    productQuentity("case", 59, false);
+});
+
